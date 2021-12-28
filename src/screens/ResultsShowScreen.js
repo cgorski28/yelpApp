@@ -6,10 +6,11 @@ const ResultsShowScreen = ({ navigation }) => {
     const [result, setResult] = useState(null)
     const id = navigation.getParam('id');
 
-    const getResult = async (id) => {
+    const getResult = async(id) => {
         const response = await yelp.get(`/${id}`)
         setResult(response.data)
     }
+
     useEffect(() => {
         getResult(id)
     })
